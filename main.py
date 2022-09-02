@@ -17,8 +17,8 @@ class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
         query = event.get_query().strip()
-        if query == extension.preferences['kus']:
-            subprocess.Popen(['setxkbmap', 'us', '-variant', 'alt-intl'])
+        if query == extension.preferences['e']:
+            subprocess.Popen(['fcitx-remote', '-s', 'fcitx-keyboard-es-dvorak'])
         elif query == extension.preferences['kit']:
             subprocess.Popen(['setxkbmap', 'it'])
         elif query == extension.preferences['kes']:
